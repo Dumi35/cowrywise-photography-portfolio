@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+  /* Base Colour */
+  --base-white: #FFFFFF;
+  --base-black: #121413;
+
+  /* Neutral Colours (Grey) */
+  --grey-100: #33333333;
+  --grey-200: #33333366;
+  --grey-400: #33333399;
+  --grey-600: #333333CC;
+  --grey-800: #333333;
+  --grey-900: #1A1A1A;
+
+  /* Brand Color */
+  --brand-100: #31987333;
+  --brand-200: #31987366;
+  --brand-400: #31987399;
+  --brand-600: #319873CC;
+  --brand-800: #319873;
+
+  /* Font Family Primitives */
+  --font-family: "Quicksand", sans-serif;
+
+  /* Font Size Primitives */
+  --font-size-h1: clamp(2.5rem, 3vw, 4rem);
+  --font-size-h2: 2.5rem;
+  --font-size-h3: 2rem;
+  --font-size-base: 1.5rem; /* 24px */  
+  --font-size-sm: clamp(1rem, 1.8vw, 1.5rem);
+  --font-size-xs: 1.1rem;
+
+  /* Font Weight Primitives */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.4;
+
+  /* paddings */
+  --padding-inline-base: max(2rem, 5vw);
+  --padding-block-base: 40px;
+  --padding-block-lg: 3.7rem;
+}
+
+/* LAYER 2: THE SEMANTIC MAPPING*/
+:root {
+  --color-text-default: var(--base-white);
+
+  --color-surface-base: var(--base-black);
+
+  --color-primary: var(--brand-800);
+
+  --font-heading-h1: var(--font-weight-semibold) var(--font-size-h1) / var(--line-height-tight) var(--font-family);
+}
+
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  color: var(--color-text-default);
+  background-color: var(--color-surface-base);
+  line-height: var(--line-height-tight);
+}
+
+#hero-section {
+  min-height: 100dvh;
+  text-align: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/images/heroBg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-inline: var(--padding-inline-base);
+  padding-block: var(--padding-block-base);
+  position: relative;
+}
+
+.nav-bar{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: var(--padding-block-base);
+  @media (max-width:600px) {
+    justify-content: center;
+  }
+}
+
+.nav-bar__links{
+  display: flex;
+  gap: 20px;
+  @media (max-width:600px) {
+    flex-direction: column;
+    position: absolute;
+    right: 5%;
+    bottom: 25%;
+  }
+}
+
+h1{
+  font: var(--font-heading-h1);
+}
+
+button{
+  cursor: pointer;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.hero-content{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding-block: var(--padding-block-lg);
+}
+
+.hero-content__img{
+  border-radius: 50%;
+  width: 150px;
+  aspect-ratio: 1;
+}
+
+.hero-content__subtitle{
+  font-size: var(--font-size-sm);
+  width: min(900px, 90%);
+  font-weight: var(--font-weight-light);
+}
+
+.hero-content__buttons{
+  display: flex;
+  gap: 20px;
+  position: relative;
+}
+
+.btn{
+  text-transform: uppercase;
+  width: fit-content;
+  padding: max(0.9rem, 1.5vw) max(1rem, 5vw);
+  font-family: var(--font-family);
+  color: var(--base-white);
+  font-size: var(--font-size-xs);
+  outline: none;
+  border-radius: 5px;
+  font-weight: var(--font-weight-bold);
+  background: transparent;
+  border:none;
+}
+
+.btn--primary{
+  background-color: var(--color-primary);
+}
+
+.btn--secondary{
+  border: 2px solid var(--base-white);
+}
+
+.hero-section-carousel--arrows{
+  display: none;
+  gap: 20px;
+  @media (min-width:1200px) {
+  align-items: end;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: -70%;
+    bottom: 0%;
+  }
+}
+.hero-section-carousel--arrows-btn{
+  padding: 0px;
+}
+
+.hero-section__carousel-indicators{
+  display: flex;
+  gap: -70px;
+}
+
+.hero-section__carousel-indicator-dot{
+  width: 50px;
+  height: 2px;
+  border-radius: 30px;
+  background-color: var(--base-white);
+  opacity: 0.5;
+}
+
+.hero-section__carousel-indicator-dot--active{
+  opacity: 1;
+}
