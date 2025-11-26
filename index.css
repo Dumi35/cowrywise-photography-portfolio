@@ -31,7 +31,7 @@
   --font-size-h3: clamp(1.4rem, 1.2vw + 0.3rem, 2rem);
   --font-size-base: 1.5rem;
   --font-size-sm: clamp(1.1rem, 2vw + 0.4rem, 1.6rem);
-  --font-size-xs: clamp(1rem, 1.5vw + 0.3rem, 1.3rem);
+  --font-size-xs: clamp(1rem, 1.2vw + 0.2rem, 1.4rem);
   --font-size-xxs: clamp(0.8rem, 1vw + 0.1rem, 1.2rem);
 
   /* Font Weight Primitives */
@@ -44,8 +44,8 @@
 
   /* paddings */
   --padding-inline-base: max(2rem, 5vw);
-  --padding-block-base: 40px;
-  --padding-block-lg: 4.5rem;
+  --padding-block-base: 35px;
+  --padding-block-lg: 2.5rem;
 
   /* flex gaps */
   --gap-lg: 40px;
@@ -254,11 +254,12 @@ a {
 }
 
 .fun-facts-card {
-  flex-basis: 300px;
+  flex-basis: 200px;
+  flex-grow: 0.5;
 }
 
 .fun-facts-card__icon {
-  width: min(4rem, 12vw);
+  width: min(3.2rem, 10vw);
   aspect-ratio: 1;
 }
 
@@ -508,9 +509,11 @@ footer div {
   gap: var(--gap-base);
   justify-content: center;
   align-items: center;
-  padding-top: var(--padding-block-base);
+  padding-bottom: 5rem;
 }
 
 .footer__social-links{
-  border-top: 2px solid var(--base-white)
+  border-top: 2px solid var(--base-white);
+  padding-block: var(--padding-block-base);
+  padding-bottom: 10px;
 }
